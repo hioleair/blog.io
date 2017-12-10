@@ -104,8 +104,8 @@
 <meta name="keywords" content="consul,cluster">
 <meta property="og:type" content="article">
 <meta property="og:title" content="consul配置与实战">
-<meta property="og:url" content="http://hacloud.club/2017/09/16/consul/index.html">
-<meta property="og:site_name" content="Aoho&#39;s Blog">
+<meta property="og:url" content="http://zhangxuanming.com/2017/09/16/consul/index.html">
+<meta property="og:site_name" content="Hioleair&#39;s Blog">
 <meta property="og:description" content="上一篇提到，项目用的分布式服务发现与注册组件是consul，这篇文章主要来讲下consul组件在项目中的应用以及相关介绍。本文以官方文档为主要参考consul文档。 1. consul介绍consul是一个服务管理软件，主要功能如下：  支持多数据中心下，分布式高可用的，服务发现和配置共享。 consul支持健康检查，允许存储键值对。 一致性协议采用Raft算法,用来保证服务的高可用。 成员管理和">
 <meta property="og:image" content="http://ovci9bs39.bkt.clouddn.com/raft%E7%AE%97%E6%B3%95.png">
 <meta property="og:image" content="http://ovci9bs39.bkt.clouddn.com/consul.png">
@@ -142,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://hacloud.club/2017/09/16/consul/"/>
+  <link rel="canonical" href="http://zhangxuanming.com/2017/09/16/consul/"/>
 
 
 
 
 
-  <title>consul配置与实战 | Aoho's Blog</title>
+  <title>consul配置与实战 | Hioleair's Blog</title>
   
 
 
@@ -185,12 +185,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Aoho's Blog</span>
+        <span class="site-title">Hioleair's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">Focus On Software Architecture</p>
+        <p class="site-subtitle">Change YourSelf</p>
       
   </div>
 
@@ -332,16 +332,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacloud.club/2017/09/16/consul/">
+    <link itemprop="mainEntityOfPage" href="http://zhangxuanming.com/2017/09/16/consul/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="keets">
+      <meta itemprop="name" content="hioleair">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoho's Blog">
+      <meta itemprop="name" content="Hioleair's Blog">
     </span>
 
     
@@ -459,7 +459,7 @@
 <li>最后，gossip允许可靠和快速的事件广播，如Leader选举。</li>
 </ul>
 <p>WAN Pool是全局唯一的，无论属于哪一个数据中心，所有Server应该加入到WAN Pool。由WAN Pool提供会员信息让Server可节电执行跨数据中心的请求。集成中故障检测允许Consul妥善处理整个数据中心失去连接，或在远程数据中心只是单个的Server节点。<br>所有这些功能都是通过利用Serf提供。从用户角度来看，它是作为一个嵌入式库提供这些功能。但其被Consul屏蔽，用户无需关心。作为开发人员可以去了解这个库是如何利用。</p>
-<h3 id="1-4-Session会话"><a href="#1-4-Session会话" class="headerlink" title="1.4 Session会话"></a>1.4 Session会话</h3><p>上一篇文章<a href="http://hacloud.club/2017/09/09/snowflake/">snowflake升级版全局id生成</a>中使用到了consul的KV存储。<br>Consul提供session会话机制，可以用于构建分布式锁。session可以绑定到节点、健康检查、KV数据，目的是提供细粒度锁。<br>KV存储和会话的集成是使用会话的主要场景。必须在使用之前创建一个会话，然后使用它的ID。KV API支持acquire和release操作，acquire操作类似CAS操作，只有当锁空闲时才会返回成功。当成功时，某个normal标识会更新，也会递增LockIndex，当然也会更新session的信息。<br>如果在acquire操作时，与session相关的锁已经持有，那么LockIndex就不会递增，但是key值会更新，这就允许锁的当前持有者无需重新获得锁就可以更新key的内容。<br> 一旦获得锁，所需要经release操作来释放（使用相同的session）。Release操作也类似于CAS操作。如果给定的session无效，那么请求会失败。需要特别注意的是，无需经过session的创建者，lock也是可以被释放的。这种设计是允许操作者干预来终止会话，在需要的时候。如上所述，会话无效也将导致所有被持有的锁被释放或删除。当锁被释放时，LockIndex不会变化，但是session会被清空，并且ModifyIndex递增。这些语义允许元组（Key，LockIndex，Session）作为一个独特的“序列”。这个序列可以被传递和用于验证请求是否属于当前的锁持有者。因为每次acquire 都会导致LockIndex递增，即使同一会话中重新获取锁，该序列能够检测到陈旧的请求。同样，如果会话失效，相应的LockIndex将为空。<br>要清楚的是，这种锁系统是纯粹的咨询。并不是强制Client必须获取锁再能执行操作作。任何客户端都可以在未获得锁的情况下读取、写入和删除Key操作。它不是Consul用于保护系统的方法。</p>
+<h3 id="1-4-Session会话"><a href="#1-4-Session会话" class="headerlink" title="1.4 Session会话"></a>1.4 Session会话</h3><p>上一篇文章<a href="http://zhangxuanming.com/2017/09/09/snowflake/">snowflake升级版全局id生成</a>中使用到了consul的KV存储。<br>Consul提供session会话机制，可以用于构建分布式锁。session可以绑定到节点、健康检查、KV数据，目的是提供细粒度锁。<br>KV存储和会话的集成是使用会话的主要场景。必须在使用之前创建一个会话，然后使用它的ID。KV API支持acquire和release操作，acquire操作类似CAS操作，只有当锁空闲时才会返回成功。当成功时，某个normal标识会更新，也会递增LockIndex，当然也会更新session的信息。<br>如果在acquire操作时，与session相关的锁已经持有，那么LockIndex就不会递增，但是key值会更新，这就允许锁的当前持有者无需重新获得锁就可以更新key的内容。<br> 一旦获得锁，所需要经release操作来释放（使用相同的session）。Release操作也类似于CAS操作。如果给定的session无效，那么请求会失败。需要特别注意的是，无需经过session的创建者，lock也是可以被释放的。这种设计是允许操作者干预来终止会话，在需要的时候。如上所述，会话无效也将导致所有被持有的锁被释放或删除。当锁被释放时，LockIndex不会变化，但是session会被清空，并且ModifyIndex递增。这些语义允许元组（Key，LockIndex，Session）作为一个独特的“序列”。这个序列可以被传递和用于验证请求是否属于当前的锁持有者。因为每次acquire 都会导致LockIndex递增，即使同一会话中重新获取锁，该序列能够检测到陈旧的请求。同样，如果会话失效，相应的LockIndex将为空。<br>要清楚的是，这种锁系统是纯粹的咨询。并不是强制Client必须获取锁再能执行操作作。任何客户端都可以在未获得锁的情况下读取、写入和删除Key操作。它不是Consul用于保护系统的方法。</p>
 <h2 id="2-consul架构"><a href="#2-consul架构" class="headerlink" title="2. consul架构"></a>2. consul架构</h2><p>上面介绍了consul的技术内幕。现在来讲讲consul的架构。</p>
 <p><img src="http://ovci9bs39.bkt.clouddn.com/consul.png" alt="consul" title="consul"></p>
 <p>拆解开这个体系，从每一个组件开始了解。首先，可以看到有两个数据中心，分别标记为“one”和“two”。Consul是支持多数据中心一流，并且是常用业务场景。   </p>
@@ -515,8 +515,8 @@
       
         
 <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="keets wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，aoho求索，订阅我的博客!</div>
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="hioleair wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，Hioleair求索，订阅我的博客!</div>
 </div>
 
 
@@ -534,13 +534,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat.jpg" alt="keets WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat.jpg" alt="hioleair WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/ali.jpg" alt="keets Alipay"/>
+          <img id="alipay_qr" src="/uploads/ali.jpg" alt="hioleair Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -557,11 +557,11 @@
   <ul class="post-copyright">
     <li class="post-copyright-author">
       <strong>本文作者：</strong>
-      keets
+      hioleair
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://hacloud.club/2017/09/16/consul/" title="consul配置与实战">http://hacloud.club/2017/09/16/consul/</a>
+      <a href="http://zhangxuanming.com/2017/09/16/consul/" title="consul配置与实战">http://zhangxuanming.com/2017/09/16/consul/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -710,10 +710,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
-               alt="keets" />
-          <p class="site-author-name" itemprop="name">keets</p>
+               alt="hioleair" />
+          <p class="site-author-name" itemprop="name">hioleair</p>
            
-              <p class="site-description motion-element" itemprop="description">聚沙成塔！</p>
+              <p class="site-description motion-element" itemprop="description">热爱生活！</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -757,7 +757,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/keets2012" target="_blank" title="GitHub">
+                <a href="https://github.com/hioleair2012" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -832,7 +832,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">keets</span>
+  <span class="author" itemprop="copyrightHolder">hioleair</span>
 </div>
 
 
@@ -971,18 +971,18 @@
   
 
     
-      <script id="dsq-count-scr" src="https://keets-blog.disqus.com/count.js" async></script>
+      <script id="dsq-count-scr" src="https://hioleair-blog.disqus.com/count.js" async></script>
     
 
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hacloud.club/2017/09/16/consul/';
+          this.page.url = 'http://zhangxuanming.com/2017/09/16/consul/';
           this.page.identifier = '2017/09/16/consul/';
           this.page.title = 'consul配置与实战';
         };
         var d = document, s = d.createElement('script');
-        s.src = 'https://keets-blog.disqus.com/embed.js';
+        s.src = 'https://hioleair-blog.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
       </script>

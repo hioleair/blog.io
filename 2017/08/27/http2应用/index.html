@@ -104,8 +104,8 @@
 <meta name="keywords" content="HTTP2,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP 2实际应用">
-<meta property="og:url" content="http://hacloud.club/2017/08/27/http2应用/index.html">
-<meta property="og:site_name" content="Aoho&#39;s Blog">
+<meta property="og:url" content="http://zhangxuanming.com/2017/08/27/http2应用/index.html">
+<meta property="og:site_name" content="Hioleair&#39;s Blog">
 <meta property="og:description" content="1. 背景介绍1.1 需要解决的问题本文来源于项目需要，项目所使用微服务框架为Spring Cloud，微服务之间的调用基于HTTP 1.X协议，上一篇文章 HTTPS vs HTTP 1.1 vs HTTP 2，介绍了http2 和http1.1的相关知识，也列出了http1.1局限性，链路不能复用、数据不加密、头信息过多等等。为此，笔者在想能不能将feign client的调用基于http2协">
 <meta property="og:image" content="http://ovci9bs39.bkt.clouddn.com/browser%20for%20http2.png">
 <meta property="og:updated_time" content="2017-09-04T03:27:54.000Z">
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://hacloud.club/2017/08/27/http2应用/"/>
+  <link rel="canonical" href="http://zhangxuanming.com/2017/08/27/http2应用/"/>
 
 
 
 
 
-  <title>HTTP 2实际应用 | Aoho's Blog</title>
+  <title>HTTP 2实际应用 | Hioleair's Blog</title>
   
 
 
@@ -183,12 +183,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Aoho's Blog</span>
+        <span class="site-title">Hioleair's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">Focus On Software Architecture</p>
+        <p class="site-subtitle">Change YourSelf</p>
       
   </div>
 
@@ -330,16 +330,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://hacloud.club/2017/08/27/http2应用/">
+    <link itemprop="mainEntityOfPage" href="http://zhangxuanming.com/2017/08/27/http2应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="keets">
+      <meta itemprop="name" content="hioleair">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoho's Blog">
+      <meta itemprop="name" content="Hioleair's Blog">
     </span>
 
     
@@ -432,9 +432,9 @@
       
 
       
-        <h2 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1. 背景介绍"></a>1. 背景介绍</h2><h3 id="1-1-需要解决的问题"><a href="#1-1-需要解决的问题" class="headerlink" title="1.1 需要解决的问题"></a>1.1 需要解决的问题</h3><p>本文来源于项目需要，项目所使用微服务框架为Spring Cloud，微服务之间的调用基于HTTP 1.X协议，上一篇文章 <a href="http://hacloud.club/2017/08/26/HTTP2/">HTTPS vs HTTP 1.1 vs HTTP 2</a>，介绍了http2 和http1.1的相关知识，也列出了http1.1局限性，链路不能复用、数据不加密、头信息过多等等。为此，笔者在想能不能将feign client的调用基于http2协议，做了如下调研。</p>
+        <h2 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="1. 背景介绍"></a>1. 背景介绍</h2><h3 id="1-1-需要解决的问题"><a href="#1-1-需要解决的问题" class="headerlink" title="1.1 需要解决的问题"></a>1.1 需要解决的问题</h3><p>本文来源于项目需要，项目所使用微服务框架为Spring Cloud，微服务之间的调用基于HTTP 1.X协议，上一篇文章 <a href="http://zhangxuanming.com/2017/08/26/HTTP2/">HTTPS vs HTTP 1.1 vs HTTP 2</a>，介绍了http2 和http1.1的相关知识，也列出了http1.1局限性，链路不能复用、数据不加密、头信息过多等等。为此，笔者在想能不能将feign client的调用基于http2协议，做了如下调研。</p>
 <p>HTTP/2 源自 SPDY/2。SPDY 系列协议由谷歌开发，于 2009 年公开。它的设计目标是降低 50% 的页面加载时间。当下很多著名的互联网公司，例如百度、淘宝、UPYUN 都在自己的网站或 APP 中采用了 SPDY 系列协议（当前最新版本是 SPDY/3.1），因为它对性能的提升是显而易见的。主流的浏览器（谷歌、火狐、Opera）也都早已经支持 SPDY，它已经成为了工业标准，HTTP Working-Group 最终决定以 SPDY/2 为基础，开发 HTTP/2。<br>2013年8月，进行首次测试，诞生的时间很晚，笔者搜索了网上关于http2实践的相关信息，发现并不多。</p>
-<h3 id="1-2-关于项目介绍"><a href="#1-2-关于项目介绍" class="headerlink" title="1.2 关于项目介绍"></a>1.2 关于项目介绍</h3><p>Spring Cloud是笔者项目采用的微服务框架，具体介绍见<a href="http://hacloud.club/2017/07/18/spring-cloud/">Spring Cloud</a>。Spring Cloud是基于Spring Boot开发的组合框架，Spring Boot内置的容器是Tomcat，笔者的项目一般都会exclude Tomcat的引用，使用的是Jetty容器。所以搜索的主题词就变成了 jetty http2。</p>
+<h3 id="1-2-关于项目介绍"><a href="#1-2-关于项目介绍" class="headerlink" title="1.2 关于项目介绍"></a>1.2 关于项目介绍</h3><p>Spring Cloud是笔者项目采用的微服务框架，具体介绍见<a href="http://zhangxuanming.com/2017/07/18/spring-cloud/">Spring Cloud</a>。Spring Cloud是基于Spring Boot开发的组合框架，Spring Boot内置的容器是Tomcat，笔者的项目一般都会exclude Tomcat的引用，使用的是Jetty容器。所以搜索的主题词就变成了 jetty http2。</p>
 <h2 id="2-调研结果"><a href="#2-调研结果" class="headerlink" title="2. 调研结果"></a>2. 调研结果</h2><p>大部分的人习惯于将Tomcat运行在8080端口，再用Apache server在前面提供https。这样做是因为简单且验证过的方法。使用http2 ，你将被迫使用https，这样就不用部署Apache (or nginx)。</p>
 <h3 id="2-1-服务端"><a href="#2-1-服务端" class="headerlink" title="2.1 服务端"></a>2.1 服务端</h3><blockquote>
 <p>Currently Jetty and undertow are the only servers in Spring Boot that support HTTP/2.<br>Jetty has booked some progress and this repository shows an excellent example. In my opinion it’s still too much custom code, but they’re getting there.<br>The next candidate is undertow. It seems almost too easy, but it works. Because we use AJP in our current configuration it even means this HTTP/2 solution has less lines of code!</p>
@@ -481,8 +481,8 @@
       
         
 <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="keets wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，aoho求索，订阅我的博客!</div>
+    <img id="wechat_subscriber_qcode" src="/uploads/qrcode.jpg" alt="hioleair wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，Hioleair求索，订阅我的博客!</div>
 </div>
 
 
@@ -500,13 +500,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat.jpg" alt="keets WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat.jpg" alt="hioleair WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/ali.jpg" alt="keets Alipay"/>
+          <img id="alipay_qr" src="/uploads/ali.jpg" alt="hioleair Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -523,11 +523,11 @@
   <ul class="post-copyright">
     <li class="post-copyright-author">
       <strong>本文作者：</strong>
-      keets
+      hioleair
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://hacloud.club/2017/08/27/http2应用/" title="HTTP 2实际应用">http://hacloud.club/2017/08/27/http2应用/</a>
+      <a href="http://zhangxuanming.com/2017/08/27/http2应用/" title="HTTP 2实际应用">http://zhangxuanming.com/2017/08/27/http2应用/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -676,10 +676,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
-               alt="keets" />
-          <p class="site-author-name" itemprop="name">keets</p>
+               alt="hioleair" />
+          <p class="site-author-name" itemprop="name">hioleair</p>
            
-              <p class="site-description motion-element" itemprop="description">聚沙成塔！</p>
+              <p class="site-description motion-element" itemprop="description">热爱生活！</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -723,7 +723,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/keets2012" target="_blank" title="GitHub">
+                <a href="https://github.com/hioleair2012" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -798,7 +798,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">keets</span>
+  <span class="author" itemprop="copyrightHolder">hioleair</span>
 </div>
 
 
@@ -937,18 +937,18 @@
   
 
     
-      <script id="dsq-count-scr" src="https://keets-blog.disqus.com/count.js" async></script>
+      <script id="dsq-count-scr" src="https://hioleair-blog.disqus.com/count.js" async></script>
     
 
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hacloud.club/2017/08/27/http2应用/';
+          this.page.url = 'http://zhangxuanming.com/2017/08/27/http2应用/';
           this.page.identifier = '2017/08/27/http2应用/';
           this.page.title = 'HTTP 2实际应用';
         };
         var d = document, s = d.createElement('script');
-        s.src = 'https://keets-blog.disqus.com/embed.js';
+        s.src = 'https://hioleair-blog.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
       </script>
