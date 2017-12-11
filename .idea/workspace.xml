@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="658fd05a-7287-49df-a564-cd0d710edcea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/404.html" afterPath="$PROJECT_DIR$/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/07/10/REST与HTTP/index.html" afterPath="$PROJECT_DIR$/2017/07/10/REST与HTTP/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/07/18/spring-cloud/index.html" afterPath="$PROJECT_DIR$/2017/07/18/spring-cloud/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/08/10/mongodb集群基础/index.html" afterPath="$PROJECT_DIR$/2017/08/10/mongodb集群基础/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/08/26/HTTP2/index.html" afterPath="$PROJECT_DIR$/2017/08/26/HTTP2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/08/27/http2应用/index.html" afterPath="$PROJECT_DIR$/2017/08/27/http2应用/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/08/28/mac快捷键/index.html" afterPath="$PROJECT_DIR$/2017/08/28/mac快捷键/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/08/30/Jerseyvsspringmvc/index.html" afterPath="$PROJECT_DIR$/2017/08/30/Jerseyvsspringmvc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/02/spring-boot-starter-swaggerforjersey/index.html" afterPath="$PROJECT_DIR$/2017/09/02/spring-boot-starter-swaggerforjersey/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/04/ThreadLocal/index.html" afterPath="$PROJECT_DIR$/2017/09/04/ThreadLocal/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/09/snowflake/index.html" afterPath="$PROJECT_DIR$/2017/09/09/snowflake/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/16/consul/index.html" afterPath="$PROJECT_DIR$/2017/09/16/consul/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/25/raft/index.html" afterPath="$PROJECT_DIR$/2017/09/25/raft/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/09/29/rediscluster/index.html" afterPath="$PROJECT_DIR$/2017/09/29/rediscluster/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/10/06/lombok/index.html" afterPath="$PROJECT_DIR$/2017/10/06/lombok/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2017/10/08/nsq/index.html" afterPath="$PROJECT_DIR$/2017/10/08/nsq/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.html" afterPath="$PROJECT_DIR$/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archive/index.html" afterPath="$PROJECT_DIR$/archive/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/index.html" afterPath="$PROJECT_DIR$/archives/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/index.html" afterPath="$PROJECT_DIR$/archives/2017/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/07/index.html" afterPath="$PROJECT_DIR$/archives/2017/07/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/08/index.html" afterPath="$PROJECT_DIR$/archives/2017/08/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/09/index.html" afterPath="$PROJECT_DIR$/archives/2017/09/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/10/index.html" afterPath="$PROJECT_DIR$/archives/2017/10/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/page/2/index.html" afterPath="$PROJECT_DIR$/archives/2017/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/page/2/index.html" afterPath="$PROJECT_DIR$/archives/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/categories/index.html" afterPath="$PROJECT_DIR$/categories/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/categories/Note/index.html" afterPath="$PROJECT_DIR$/categories/Note/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/categories/Note/page/2/index.html" afterPath="$PROJECT_DIR$/categories/Note/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/categories/Utils/index.html" afterPath="$PROJECT_DIR$/categories/Utils/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/2/index.html" afterPath="$PROJECT_DIR$/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/index.html" afterPath="$PROJECT_DIR$/tags/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Cluster/index.html" afterPath="$PROJECT_DIR$/tags/Cluster/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Consensus/index.html" afterPath="$PROJECT_DIR$/tags/Consensus/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/HTTP/index.html" afterPath="$PROJECT_DIR$/tags/HTTP/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/HTTP2/index.html" afterPath="$PROJECT_DIR$/tags/HTTP2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/HTTPS/index.html" afterPath="$PROJECT_DIR$/tags/HTTPS/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Java/index.html" afterPath="$PROJECT_DIR$/tags/Java/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Jersey/index.html" afterPath="$PROJECT_DIR$/tags/Jersey/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Lombok/index.html" afterPath="$PROJECT_DIR$/tags/Lombok/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/MongoDB/index.html" afterPath="$PROJECT_DIR$/tags/MongoDB/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/REST/index.html" afterPath="$PROJECT_DIR$/tags/REST/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Spring/index.html" afterPath="$PROJECT_DIR$/tags/Spring/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Spring-Cloud/index.html" afterPath="$PROJECT_DIR$/tags/Spring-Cloud/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/Thread/index.html" afterPath="$PROJECT_DIR$/tags/Thread/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/consul/index.html" afterPath="$PROJECT_DIR$/tags/consul/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/id/index.html" afterPath="$PROJECT_DIR$/tags/id/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/mac/index.html" afterPath="$PROJECT_DIR$/tags/mac/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/mq/index.html" afterPath="$PROJECT_DIR$/tags/mq/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/redis/index.html" afterPath="$PROJECT_DIR$/tags/redis/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/snowflake/index.html" afterPath="$PROJECT_DIR$/tags/snowflake/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/spring-boot/index.html" afterPath="$PROJECT_DIR$/tags/spring-boot/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/starter/index.html" afterPath="$PROJECT_DIR$/tags/starter/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/swagger/index.html" afterPath="$PROJECT_DIR$/tags/swagger/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/utils/index.html" afterPath="$PROJECT_DIR$/tags/utils/index.html" />
     </list>
     <ignored path="bl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,44 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tags/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.632183" vertical-offset="498" max-vertical-offset="18981">
-              <caret line="139" column="54" selection-start-line="139" selection-start-column="54" selection-end-line="139" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#5;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#7;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#8;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#9;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#10;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#11;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#12;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#13;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#14;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#15;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#16;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#17;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#18;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#19;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#20;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#21;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#22;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#23;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#24;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#25;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#26;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tags/Thread/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -174,11 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2017/07/10/REST与HTTP/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21185185" vertical-offset="13233" max-vertical-offset="24947">
+            <state vertical-scroll-proportion="-11.214286" vertical-offset="13062" max-vertical-offset="24947">
               <caret line="704" column="25" selection-start-line="704" selection-start-column="25" selection-end-line="704" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/about/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21185185" vertical-offset="6127" max-vertical-offset="19342">
+              <caret line="330" column="595" selection-start-line="330" selection-start-column="595" selection-end-line="330" selection-end-column="595" />
               <folding />
             </state>
           </provider>
@@ -220,13 +137,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/images/algolia_logo.svg" />
-        <option value="$PROJECT_DIR$/about/index.html" />
         <option value="$PROJECT_DIR$/tags/index.html" />
         <option value="$PROJECT_DIR$/page/2/index.html" />
         <option value="$PROJECT_DIR$/404.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/2017/07/18/spring-cloud/index.html" />
         <option value="$PROJECT_DIR$/2017/07/10/REST与HTTP/index.html" />
+        <option value="$PROJECT_DIR$/about/index.html" />
       </list>
     </option>
   </component>
@@ -234,8 +151,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="6" />
+    <option name="y" value="259" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
@@ -280,6 +197,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,15 +490,15 @@
       <created>1512895471730</created>
       <option name="number" value="Default" />
       <updated>1512895471730</updated>
-      <workItem from="1512895472241" duration="8221000" />
+      <workItem from="1512895472241" duration="9601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8221000" />
+    <option name="totallyTimeSpent" value="9601000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="6" y="259" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -765,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3563218" vertical-offset="16439" max-vertical-offset="19342">
-          <caret line="876" column="27" selection-start-line="876" selection-start-column="27" selection-end-line="876" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/2/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8505745" vertical-offset="1467" max-vertical-offset="33307">
@@ -884,8 +807,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2017/07/10/REST与HTTP/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21185185" vertical-offset="13233" max-vertical-offset="24947">
+        <state vertical-scroll-proportion="-11.214286" vertical-offset="13062" max-vertical-offset="24947">
           <caret line="704" column="25" selection-start-line="704" selection-start-column="25" selection-end-line="704" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21185185" vertical-offset="6127" max-vertical-offset="19342">
+          <caret line="330" column="595" selection-start-line="330" selection-start-column="595" selection-end-line="330" selection-end-column="595" />
           <folding />
         </state>
       </provider>
